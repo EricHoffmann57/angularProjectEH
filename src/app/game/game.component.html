@@ -1,0 +1,31 @@
+<mat-card class="game" [ngClass]=" { 'list-group-item': true,
+'list-group-item-info': gameFav == true,
+'list-group-item-warning': gameFav == false }"
+>
+  <div class="row">
+    <div class="game-thumb-container">
+      <img *ngIf="gameArt" [src]="gameArt"  alt="thumbnail"
+           class="game-thumbnail"/>
+      <p *ngIf="!gameArt">No image</p>
+    </div>
+    <p class="game-name">{{ gameName }}</p>
+    <div class="col-8">
+      <div class="row">
+      </div>
+      <div class="row">
+        <div class="game-platforms">
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-12">
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <button [routerLink]="['/modif', id]" class="btn btn-warning">Modify</button>
+      <button class="btn btn-danger" (click)="suppr()">Delete</button>
+    </div>
+  </div>
+  </div>
+</mat-card>
+

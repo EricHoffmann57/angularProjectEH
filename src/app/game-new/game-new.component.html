@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Game title</label><br>
+      <input type="text" class="form-control" [(ngModel)]="game.title">
+    </div>
+  </div>
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Game type</label><br>
+      <input type="text" class="form-control" [(ngModel)]="game.type">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Editor</label><br>
+      <input type="text" class="form-control" [(ngModel)]="game.editor">
+    </div>
+  </div>
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Developer</label><br>
+      <input type="text" class="form-control" [(ngModel)]="game.developer">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Composer</label><br>
+      <input type="text" class="form-control" [(ngModel)]="game.ost">
+    </div>
+  </div>
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Artwork</label><br>
+      <input type="text" class="form-control" [(ngModel)]="game.artwork">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Ranking</label> <br>
+      <input type="text" class="form-control" [(ngModel)]="game.ranking">
+    </div>
+  </div>
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Release date</label><br>
+      <input type="text" class="form-control" [(ngModel)]="game.releaseDate">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Estimated play time</label> <br>
+      <input type="text" class="form-control" [(ngModel)]="game.playtime">
+    </div>
+  </div>
+  <div class="col-12 col-sm-6">
+    <div class="form-group row">
+      <label class="col-12 col-form-label">
+        En Salle
+      </label>
+      <div class="col-12 row">
+        <div class="col-6">
+          <div class="form-check">
+            <input type="radio" name="onAir" class="form-check-input" [value]="true" [(ngModel)]="game.favorite"> <label class="form-check-label">like</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input type="radio" name="onAir" class="form-check-input" [value]="false" [(ngModel)]="game.favorite"> <label class="form-check-label">dislikes</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="form-group">
+      <label>Story</label><br>
+      <textarea name="synopsis" cols="30" rows="10" class="form-control" [(ngModel)]="game.description"></textarea>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="submit">
+      <button class="btn btn-outline-success" (click)="add()">Envoyer</button>
+    </div>
+  </div>
+</div>
