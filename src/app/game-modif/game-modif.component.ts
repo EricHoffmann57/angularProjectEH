@@ -11,6 +11,7 @@ export class GameModifComponent implements OnInit {
   game: any = null;
   change: boolean = false;
 
+
   constructor(
     private Game: GameService,
     private route: ActivatedRoute

@@ -7,7 +7,7 @@ import { GameService } from '../services/Game/game.service';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  @Input() id?: string ;
+  @Input() id?: string;
   @Input() gameName?: string;
   @Input() gameType?: string;
   @Input() gameEditor?: string;
@@ -18,36 +18,29 @@ export class GameComponent implements OnInit {
   @Input() gameOst?: string;
   @Input() gameDescription?: string;
   @Input() gamePlaytime?: string;
-  @Input() gameRanking?: string;
+  @Input() gameRating?: string;
   @Input() gameFav?: boolean;
-  @Input() filterTerm:any
-  @Input() games:any;
-  isActive = false;
+  @Input() filterTerm: any
+  isFavorite: Boolean = true;
+
 
   constructor(
     private Game: GameService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
-  getOnAir() {
-    return this.gameFav;
+  suppr() {
+    if (confirm("Are you sure to delete " + this.gameName)) {
+      this.Game.delete(this.id);
+    }
+  }
+  getDetail() {
+
   }
 
-  onWatchFilm() {
-    console.log('Je regarde le Film');
-  }
-
-  changeColor() {
-    return this.gameFav ? 'purple' : 'red';
-  }
-
-  onSwitch() {
-    // this.Film.switchOnAir(this.index);
-  }
-  suppr(){
-    this.Game.delete(this.id)
+  changeFavorite() {
   }
 }
-

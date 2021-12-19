@@ -50,6 +50,6 @@ export class GameService {
     });
   }
   delete(id:any) {
-    this.db.doc(`films/${id}`).delete();
+    this.db.doc(`games/${id}`).delete();
   }
 }

@@ -10,7 +10,7 @@ export class Game {
   ost: string;
   description: string;
   playtime: string;
-  ranking: string;
+  rating: string;
   favorite: boolean;
 
 
@@ -27,7 +27,7 @@ export class Game {
     this.ost = '';
     this.description = '';
     this.playtime = '';
-    this.ranking = '';
-    this.favorite = true;
+    this.rating = '';
+    this.favorite = false;
   }
 }

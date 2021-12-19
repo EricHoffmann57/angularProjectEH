@@ -10,21 +10,14 @@
    margin:20px;
  }
 p {
-  font-family: Lato;
-}
-
-
-
-.img-fluid{
-  width: 100%;
-  height:auto;
+  font-family: Helvetica,arial,sans-serif;
 }
 
 .games {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 20px auto;
 }
 
@@ -32,7 +25,7 @@ p {
 .game {
   width: 280px;
   margin: 10px;
-  height: 330px;
+  height: 370px;
   overflow: hidden;
   border-radius: 5px;
   background-color: #202020;
@@ -72,13 +65,20 @@ p {
   &-name {
     color: #fff;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 18px;
     margin-bottom: 20px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
-
+  &-type{
+    max-width: 80px;
+    text-align: left;
+  }
+  &-rating{
+    max-width: 50px;
+    text-align: right;
+  }
   &-platforms {
     display: flex;
   }
@@ -89,3 +89,29 @@ p {
   }
 }
 
+.game .btn-holder {
+  display: flex;
+}
+.img-thumbnail{
+  width:40px;
+  height:40px;
+  object-fit: cover;
+}
+.button-edit {
+  opacity: 0.1;
+  transition: opacity 0.5s ease;
+}
+
+.button-edit:hover {
+  opacity: 1;
+}
+
+.like{
+  margin-top: -10px;
+  text-align: right;
+  float:right;
+  font-size: 40px;
+  color: goldenrod;
+  background-color: transparent;
+  border:none;
+}

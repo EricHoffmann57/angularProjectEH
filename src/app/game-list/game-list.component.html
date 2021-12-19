@@ -1,16 +1,31 @@
+
+<div class="filters">
+  <mat-form-field id = "mySelect">
+    <mat-label>Sort</mat-label>
+    <mat-select
+      panelClass="sort-select"
+      [(value)]="selected"
+      (selectionChange)="getGameSelection()"
+    >
+      <mat-option *ngFor="let option of options; let i = index" [value]="option">{{option}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button class="btn btn-outline-primary" (click)="resetSelection()">All games</button>
+</div>
+
 <div id="search">
-<input type="text" class="searchBox" placeholder="Recherche par mot clé" [(ngModel)]="filterTerm">
+<input type="text" class="searchBox" placeholder="Search" [(ngModel)]="filterTerm">
 <label  *ngIf="games | filter: filterTerm as filtered">
   &nbsp;&nbsp;{{filtered.length}} Game(s)</label>
   </div>
   <div class="container"
     fxLayout="row wrap"
     fxLayout.lt-sm="column"
-    fxLayoutGap="32px"
+    fxLayoutGap="22px"
     fxLayoutAlign="flex-start">
-<ng-container *ngIf="games">
+<ng-container id="allGames" *ngIf="games">
   <app-game
-    fxFlex="0 1 calc(33.3% - 32px)"
+    fxFlex="0 1 calc(20% - 8px)"
     fxFlex.lt-md="0 1 calc(50% - 32px)"
     fxFlex.lt-sm="100%"
     *ngFor="let game of games |filter: filterTerm"
@@ -25,7 +40,7 @@
             [gameOst]="game.ost"
             [gameDescription]="game.description"
             [gamePlaytime]="game?.playtime"
-            [gameRanking]="game.ranking"
+            [gameRating]="game.rating"
             [gameFav]="game.favorite"
             >
   </app-game>

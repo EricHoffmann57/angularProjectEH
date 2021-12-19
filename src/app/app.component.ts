@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
   title = 'my Hall of Game';
-  games:any;
+  games!:any;
   @Input() filterTerm:any;
 
   constructor(private Game: GameService,

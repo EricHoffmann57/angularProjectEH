@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {GameService} from "./services/Game/game.service";
 import { GameListComponent } from './game-list/game-list.component';
 import { GameModifComponent } from './game-modif/game-modif.component';
@@ -23,6 +23,8 @@ import {FlexModule} from "@angular/flex-layout";
 import {MatListModule} from "@angular/material/list";
 import {MatCardModule} from "@angular/material/card";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,10 @@ import {Ng2SearchPipeModule} from "ng2-search-filter";
     FlexModule,
     MatListModule,
     Ng2SearchPipeModule,
-    MatCardModule
+    MatCardModule,
+    MatOptionModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [
     GameService

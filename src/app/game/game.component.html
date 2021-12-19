@@ -1,31 +1,24 @@
-<mat-card class="game" [ngClass]=" { 'list-group-item': true,
-'list-group-item-info': gameFav == true,
-'list-group-item-warning': gameFav == false }"
->
-  <div class="row">
+<ng-container class="game">
+  <div class="game">
     <div class="game-thumb-container">
-      <img *ngIf="gameArt" [src]="gameArt"  alt="thumbnail"
+      <img *ngIf="gameArt" [src]="gameArt" alt="thumbnail"
            class="game-thumbnail"/>
       <p *ngIf="!gameArt">No image</p>
     </div>
-    <p class="game-name">{{ gameName }}</p>
-    <div class="col-8">
-      <div class="row">
-      </div>
-      <div class="row">
-        <div class="game-platforms">
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-12">
-        </div>
+    <div class="game-description">
+      <p class="game-name">{{ gameName }}</p>
+      <div class="game-platforms">
+        <img class="img-thumbnail" src="{{gamePlatform}}" />&nbsp;
+        <p class="game-type">{{gameType}}</p>
+        <p class="game-rating">{{gameRating}}</p>
       </div>
     </div>
-    <div class="col-2">
-      <button [routerLink]="['/modif', id]" class="btn btn-warning">Modify</button>
-      <button class="btn btn-danger" (click)="suppr()">Delete</button>
-    </div>
+    <button (click)="changeFavorite()" [ngStyle]="{'color':!isFavorite === gameFav ? 'golden' : 'crimson' }" class="like">&#10084;</button>
   </div>
+  <div class="button-holder">
+    <button  type= "button" [routerLink]="['/modif', id]" class="button-edit btn btn-warning">M</button>
+    <button  type="button" class="button-edit btn btn-danger" (click)="suppr()">X</button>
+    <button  type="button" class="button-edit btn btn-success" (click)="getDetail()">Full Story</button>
   </div>
-</mat-card>
+</ng-container>
 

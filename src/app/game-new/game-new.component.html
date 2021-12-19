@@ -1,104 +1,180 @@
-<div class="row">
-  <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Game title</label><br>
-      <input type="text" class="form-control" [(ngModel)]="game.title">
-    </div>
-  </div>
-  <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Game type</label><br>
-      <input type="text" class="form-control" [(ngModel)]="game.type">
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Editor</label><br>
-      <input type="text" class="form-control" [(ngModel)]="game.editor">
-    </div>
-  </div>
-  <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Developer</label><br>
-      <input type="text" class="form-control" [(ngModel)]="game.developer">
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Composer</label><br>
-      <input type="text" class="form-control" [(ngModel)]="game.ost">
-    </div>
-  </div>
-  <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Artwork</label><br>
-      <input type="text" class="form-control" [(ngModel)]="game.artwork">
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Ranking</label> <br>
-      <input type="text" class="form-control" [(ngModel)]="game.ranking">
-    </div>
-  </div>
-  <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Release date</label><br>
-      <input type="text" class="form-control" [(ngModel)]="game.releaseDate">
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Estimated play time</label> <br>
-      <input type="text" class="form-control" [(ngModel)]="game.playtime">
-    </div>
-  </div>
-  <div class="col-12 col-sm-6">
-    <div class="form-group row">
-      <label class="col-12 col-form-label">
-        En Salle
-      </label>
-      <div class="col-12 row">
-        <div class="col-6">
-          <div class="form-check">
-            <input type="radio" name="onAir" class="form-check-input" [value]="true" [(ngModel)]="game.favorite"> <label class="form-check-label">like</label>
+<form #registerForm="ngForm" class="form">
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="title">Game type</label><br>
+          <input type="text" class="form-control" id="title" name="title" [(ngModel)]="game.title" #title="ngModel" required/>
+        </div>
+        <div *ngIf="title.invalid && (title.dirty || title.touched)"
+             class="alert alert-danger">
+          <div *ngIf="title.errors.required">
+            Title is required
           </div>
         </div>
-        <div class="col-6">
-          <div class="form-check">
-            <input type="radio" name="onAir" class="form-check-input" [value]="false" [(ngModel)]="game.favorite"> <label class="form-check-label">dislikes</label>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="type">Game type</label><br>
+          <input type="text" class="form-control" id="type" name="type" [(ngModel)]="game.type" #type="ngModel" required/>
+        </div>
+        <div *ngIf="type.invalid && (type.dirty || type.touched)"
+             class="alert alert-danger">
+          <div *ngIf="type.errors.required">
+            Type is required
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-12">
-    <div class="form-group">
-      <label>Story</label><br>
-      <textarea name="synopsis" cols="30" rows="10" class="form-control" [(ngModel)]="game.description"></textarea>
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="editor">Editor</label><br>
+          <input type="text" class="form-control" id="editor" name="editor" [(ngModel)]="game.editor" #editor="ngModel" required/>
+        </div>
+        <div *ngIf="editor.invalid && (editor.dirty || editor.touched)"
+             class="alert alert-danger">
+          <div *ngIf="editor.errors.required">
+            Editor is required
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="developer">Developer</label><br>
+          <input type="text" class="form-control" id="developer" name="developer" [(ngModel)]="game.developer" #developer="ngModel" required/>
+        </div>
+        <div *ngIf="developer.invalid && (developer.dirty || developer.touched)"
+             class="alert alert-danger">
+          <div *ngIf="developer.errors.required">
+            Developer is required
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-12">
-    <div class="submit">
-      <button class="btn btn-outline-success" (click)="add()">Envoyer</button>
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="ost">Composer</label><br>
+          <input type="text" class="form-control" id="ost" name="ost" [(ngModel)]="game.ost" #ost="ngModel" required/>
+        </div>
+        <div *ngIf="ost.invalid && (ost.dirty || ost.touched)"
+             class="alert alert-danger">
+          <div *ngIf="ost.errors.required">
+            Composer is required
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="artwork">Artwork</label><br>
+          <input type="text" class="form-control"  id="artwork" name="artwork" [(ngModel)]="game.artwork" #artwork="ngModel" required/>
+        </div>
+        <div *ngIf="artwork.invalid && (artwork.dirty || artwork.touched)"
+             class="alert alert-danger">
+          <div *ngIf="artwork.errors.required">
+            Artwork Url is required
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="platform">Platform</label> <br>
+          <input type="text" class="form-control" id="platform" name="platform" [(ngModel)]="game.platform" #platform="ngModel" required/>
+        </div>
+        <div *ngIf="platform.invalid && (platform.dirty || platform.touched)"
+             class="alert alert-danger">
+          <div *ngIf="platform.errors.required">
+            Platform is required
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="releaseDate">Release date</label><br>
+          <input type="text" class="form-control" id="releaseDate" name="releaseDate" [(ngModel)]="game.releaseDate" #releaseDate="ngModel" required/>
+        </div>
+        <div *ngIf="releaseDate.invalid && (releaseDate.dirty || releaseDate.touched)"
+             class="alert alert-danger">
+          <div *ngIf="releaseDate.errors.required">
+            Type is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="playtime">Playtime</label> <br>
+          <input type="text" class="form-control" id="playtime" name="playtime" [(ngModel)]="game.playtime" #playtime="ngModel" required/>
+        </div>
+        <div *ngIf="playtime.invalid && (playtime.dirty || playtime.touched)"
+             class="alert alert-danger">
+          <div *ngIf="playtime.errors.required">
+            Estimated game lifespan is required
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="rating">Rating</label><br>
+          <input type="text" class="form-control" id="rating" name="rating" [(ngModel)]="game.rating" #rating="ngModel" required/>
+        </div>
+        <div *ngIf="rating.invalid && (rating.dirty || rating.touched)"
+             class="alert alert-danger">
+          <div *ngIf="rating.errors.required">
+            Stars rating is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group row">
+          <label class="col-12 col-form-label">
+            Add to favorite?
+          </label>
+          <div class="col-12 row">
+            <div class="col-6">
+              <div class="form-check">
+                <input type="radio" name="favorite" class="form-check-input" [value]="true" [(ngModel)]="game.favorite"> <label class="form-check-label">Best game</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-check">
+                <input type="radio" name="favorite" class="form-check-input" [value]="false" [(ngModel)]="game.favorite"> <label class="form-check-label">Good game</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="description">Story</label><br>
+          <textarea cols="30" rows="10" id="description" name="description" class="form-control" [(ngModel)]="game.description" #description="ngModel" required></textarea>
+        </div>
+        <div *ngIf="description.invalid && (description.dirty || description.touched)"
+             class="alert alert-danger">
+          <div *ngIf="description.errors.required">
+            A small description of game is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="submit">
+          <button class="btn btn-outline-success" (click)="add()" [disabled] = "!registerForm.form.valid" >Submit</button>
+          <button style="margin-left: 2em" class="btn btn-warning float-md" (click)="onReset()">Reset</button>
+        </div>
+      </div>
+    </div>
+</form>
