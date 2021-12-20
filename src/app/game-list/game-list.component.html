@@ -1,6 +1,5 @@
-
 <div class="filters">
-  <mat-form-field id = "mySelect">
+  <mat-form-field id="mySelect">
     <mat-label>Sort</mat-label>
     <mat-select
       panelClass="sort-select"
@@ -14,35 +13,35 @@
 </div>
 
 <div id="search">
-<input type="text" class="searchBox" placeholder="Search" [(ngModel)]="filterTerm">
-<label  *ngIf="games | filter: filterTerm as filtered">
-  &nbsp;&nbsp;{{filtered.length}} Game(s)</label>
-  </div>
-  <div class="container"
-    fxLayout="row wrap"
-    fxLayout.lt-sm="column"
-    fxLayoutGap="22px"
-    fxLayoutAlign="flex-start">
-<ng-container id="allGames" *ngIf="games">
-  <app-game
-    fxFlex="0 1 calc(20% - 8px)"
-    fxFlex.lt-md="0 1 calc(50% - 32px)"
-    fxFlex.lt-sm="100%"
-    *ngFor="let game of games |filter: filterTerm"
-            [id]="game.id"
-            [gameName]="game.title"
-            [gameType] = "game.type"
-            [gameEditor]="game.editor"
-            [gameDev] = "game.developer"
-            [gamePlatform] ="game.platform"
-            [gameArt]="game.artwork"
-            [gameReleaseDate]="game.releaseDate"
-            [gameOst]="game.ost"
-            [gameDescription]="game.description"
-            [gamePlaytime]="game?.playtime"
-            [gameRating]="game.rating"
-            [gameFav]="game.favorite"
-            >
-  </app-game>
-</ng-container>
-  </div>
+  <input type="text" class="searchBox" placeholder="Search" [(ngModel)]="filterTerm">
+  <label *ngIf="games | filter: filterTerm as filtered">
+    &nbsp;&nbsp;{{filtered.length}} Game(s)</label>
+</div>
+<div class="container"
+     fxLayout="row wrap"
+     fxLayout.lt-sm="column"
+     fxLayoutGap="22px"
+     fxLayoutAlign="flex-start">
+  <ng-container id="allGames" *ngIf="games">
+    <app-game
+      fxFlex="0 1 calc(20% - 8px)"
+      fxFlex.lt-md="0 1 calc(50% - 32px)"
+      fxFlex.lt-sm="100%"
+      *ngFor="let game of games |filter: filterTerm"
+      [id]="game.id"
+      [gameName]="game.title"
+      [gameType]="game.type"
+      [gameEditor]="game.editor"
+      [gameDev]="game.developer"
+      [gamePlatform]="game.platform"
+      [gameArt]="game.artwork"
+      [gameReleaseDate]="game.releaseDate"
+      [gameOst]="game.ost"
+      [gameDescription]="game.description"
+      [gamePlaytime]="game?.playtime"
+      [gameRating]="game.rating"
+      [gameFav]="game.favorite"
+    >
+    </app-game>
+  </ng-container>
+</div>

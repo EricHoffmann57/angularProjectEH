@@ -25,6 +25,8 @@ import {MatCardModule} from "@angular/material/card";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
+import {MatDialogModule} from "@angular/material/dialog";
+import { DetailPopUpComponent } from './detail-pop-up/detail-pop-up.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import {MatSelectModule} from "@angular/material/select";
     GameModifComponent,
     GameNewComponent,
     HomeComponent,
+    DetailPopUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import {MatSelectModule} from "@angular/material/select";
     MatCardModule,
     MatOptionModule,
     MatSelectModule,
+    MatDialogModule,
     ReactiveFormsModule
   ],
   providers: [

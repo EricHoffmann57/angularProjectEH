@@ -2,6 +2,7 @@ import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {GameService} from '../services/Game/game.service';
 import {Router} from "@angular/router";
 import {style} from "@angular/animations";
+import {DetailPopUpComponent} from "../detail-pop-up/detail-pop-up.component";
 
 
 @Component({
@@ -41,7 +42,6 @@ export class GameListComponent implements OnInit {
     let selectedVal = this.options.findIndex(item => item === this.selected);
     // sort items in array by custom criteria
     if (selectedVal === 1) {
-      console.log(this.games);
       this.games.sort(function (a, b) {
         if (a.title < b.title) return -1;
         if (a.title > b.title) return 1;

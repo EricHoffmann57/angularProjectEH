@@ -1,5 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Inject} from '@angular/core';
 import { GameService } from '../services/Game/game.service';
+import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
+import {DetailPopUpComponent} from "../detail-pop-up/detail-pop-up.component";
+import {ActivatedRoute, Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-game',
@@ -22,14 +26,23 @@ export class GameComponent implements OnInit {
   @Input() gameFav?: boolean;
   @Input() filterTerm: any
   isFavorite: Boolean = true;
-
+  game:any;
 
   constructor(
-    private Game: GameService
+    private Game: GameService,
+    private dialogRef: MatDialog,
+    private route: ActivatedRoute
   ) {
   }
 
   ngOnInit(): void {
+    this.getGameById();
+  }
+  getGameById():any{
+    const id = this.route.snapshot.params['id'];
+    this.Game.get(id).subscribe((value: any) => {
+      this.game = value;
+    });
   }
 
   suppr() {
@@ -37,10 +50,23 @@ export class GameComponent implements OnInit {
       this.Game.delete(this.id);
     }
   }
-  getDetail() {
 
-  }
-
-  changeFavorite() {
+  openDialog(){
+    this.dialogRef.open(DetailPopUpComponent,{
+      autoFocus: false,
+      //for scrollable modal on mobile
+      maxHeight: window.innerHeight + 'px',
+      data:{
+        title: this.gameName,
+        type: this.gameType,
+        editor: this.gameEditor,
+        developer: this.gameDev,
+        composer: this.gameOst,
+        date: this.gameReleaseDate,
+        system: this.gamePlatform,
+        play: this.gamePlaytime,
+        story: this.gameDescription,
+      }
+    });
   }
 }

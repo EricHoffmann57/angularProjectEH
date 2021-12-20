@@ -6,9 +6,15 @@ body { margin: 0; font-family:"Helvetica Neue", sans-serif; }
 
 .form{
   padding:1em;
+  font-family: "Helvetica Neue", sans-serif;
 }
 label{
   color: #8bb2e2;
+}
+
+.form input, .form textarea{
+  color:#002b5c;
+  font-family: "Helvetica Neue", sans-serif;
 }
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */

@@ -13,12 +13,12 @@
         <p class="game-rating">{{gameRating}}</p>
       </div>
     </div>
-    <button (click)="changeFavorite()" [ngStyle]="{'color':!isFavorite === gameFav ? 'golden' : 'crimson' }" class="like">&#10084;</button>
+    <button  [ngStyle]="{'color':!isFavorite === gameFav ? 'golden' : 'crimson' }" class="like">&#10084;</button>
   </div>
   <div class="button-holder">
     <button  type= "button" [routerLink]="['/modif', id]" class="button-edit btn btn-warning">M</button>
     <button  type="button" class="button-edit btn btn-danger" (click)="suppr()">X</button>
-    <button  type="button" class="button-edit btn btn-success" (click)="getDetail()">Full Story</button>
+    <button  type="button" class="button-edit btn btn-success" (click)="openDialog()">Full Story</button>
   </div>
 </ng-container>
 

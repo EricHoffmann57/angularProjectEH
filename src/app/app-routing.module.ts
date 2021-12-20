@@ -9,6 +9,7 @@ import {GameModifComponent} from "./game-modif/game-modif.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
 import {GameService} from "./services/Game/game.service";
+import {DetailPopUpComponent} from "./detail-pop-up/detail-pop-up.component";
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "modif/:id",
     component: GameModifComponent
+  },
+  {
+    path: "detail-pop-up/:id",
+    component: DetailPopUpComponent
   },
   {
     path: "",
