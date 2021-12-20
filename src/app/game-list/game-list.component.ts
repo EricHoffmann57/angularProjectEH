@@ -76,7 +76,6 @@ export class GameListComponent implements OnInit {
     if (selectedVal === 6) {
       this.games = this.games.filter(
         game => game.favorite === false);
-
     }
     if (selectedVal === 0) {
       this.getGames();

@@ -172,8 +172,8 @@
     <div class="row">
       <div class="col-12">
         <div class="submit">
-          <button class="btn btn-outline-success" (click)="add()" [disabled] = "!registerForm.form.valid" >Submit</button>
-          <button style="margin-left: 2em" class="btn btn-warning float-md" (click)="onReset()">Reset</button>
+          <button class="btn btn-outline-success" (click)="add();registerForm.reset()" [disabled] = "!registerForm.form.valid" >Submit</button>
+          <button style="margin-left: 2em" class="btn btn-warning float-md" (click)="registerForm.reset()">Reset</button>
         </div>
       </div>
     </div>
