@@ -1,8 +1,7 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component,OnInit, ViewChild} from '@angular/core';
 import {GameService} from '../services/Game/game.service';
 import {Router} from "@angular/router";
 import {style} from "@angular/animations";
-import {DetailPopUpComponent} from "../detail-pop-up/detail-pop-up.component";
 
 
 @Component({
@@ -14,7 +13,7 @@ export class GameListComponent implements OnInit {
   games!: any;
   filterTerm: any;
   selected: any;
-  options: any = ['Sort filters', 'AZ', 'ZA', 'Most recent', 'rating', 'Favorite games', 'Good games'];
+  options: any = ['Reset filters', 'AZ', 'ZA', 'Most recent', 'rating', 'Favorite games', 'Good games'];
 
   @ViewChild('mySelect') form;
 
@@ -32,10 +31,6 @@ export class GameListComponent implements OnInit {
     this.Game.getAllGames().subscribe((data: any) => {
       this.games = data;
     });
-  }
-
-  openGameDetails(id: string): void {
-    this.route.navigate(['details', id]);
   }
 
   getGameSelection() {

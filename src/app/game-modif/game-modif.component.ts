@@ -24,7 +24,6 @@ export class GameModifComponent implements OnInit {
   getGameById(){
     const id = this.route.snapshot.params['id'];
     this.Game.get(id).subscribe((value: any) => {
-      console.log(value)
       this.game = value;
     });
   }

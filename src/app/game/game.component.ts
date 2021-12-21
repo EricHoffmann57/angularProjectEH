@@ -1,8 +1,8 @@
-import {Component, OnInit, Input, Inject} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { GameService } from '../services/Game/game.service';
 import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 import {DetailPopUpComponent} from "../detail-pop-up/detail-pop-up.component";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -27,7 +27,7 @@ export class GameComponent implements OnInit {
   @Input() filterTerm: any
   isFavorite: Boolean = true;
   game:any;
-
+  change: boolean = false;
   constructor(
     private Game: GameService,
     private dialogRef: MatDialog,
@@ -45,6 +45,25 @@ export class GameComponent implements OnInit {
     });
   }
 
+  addToFavorite(clicked_id) {
+    //console.log(clicked_id);
+    this.Game.get(clicked_id).subscribe((value: any) => {
+      this.game = value;
+      if (clicked_id) {
+        this.gameFav = !this.gameFav;
+      }
+        if(this.gameFav !== this.game.favorite) {
+          this.game.favorite = this.gameFav;
+          this.Game.update(this.game).subscribe(() => {
+            this.change = true;
+            setTimeout(() => {
+              this.change = false;
+            }, 3000);
+          })
+        }
+
+    });
+  }
   suppr() {
     if (confirm("Are you sure to delete " + this.gameName)) {
       this.Game.delete(this.id);
@@ -53,6 +72,7 @@ export class GameComponent implements OnInit {
 
   openDialog(){
     this.dialogRef.open(DetailPopUpComponent,{
+      //no focus on first element
       autoFocus: false,
       //for scrollable modal on mobile
       maxHeight: window.innerHeight + 'px',
