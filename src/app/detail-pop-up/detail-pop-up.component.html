@@ -1,0 +1,61 @@
+<div fxLayout="row wrap"
+     fxFlex="0 1 500px"
+     fxLayout.lt-sm="column"
+     class="formModal" (output)="closeDialog()">
+  <div *ngIf="game">
+
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label>Title</label><br>
+          <input type="text" class="form-control" [(ngModel)]="data.title" spellcheck="false">
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label>Type</label><br>
+          <input type="text" class="form-control" [(ngModel)]="data.type" spellcheck="false">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label>Editor</label><br>
+          <input type="text" class="form-control" [(ngModel)]="data.editor" spellcheck="false">
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label>Game studio</label><br>
+          <input type="text" class="form-control" [(ngModel)]="data.developer" spellcheck="false">
+        </div>
+      </div>
+      <div class="col-12 col-sm-12">
+        <div class="form-group">
+          <label>Composer(s)</label><br>
+          <textarea type="text" class="form-control" [(ngModel)]="data.composer" spellcheck="false"></textarea>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label>Release date</label><br>
+          <input type="text" class="form-control" [(ngModel)]="data.date" spellcheck="false">
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label>Game lifespan</label><br>
+          <input type="text" class="form-control" [(ngModel)]="data.play" spellcheck="false">
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-group">
+          <label>Story</label><br>
+          <textarea name="synopsis" cols="30" rows="10" class="form-control" [(ngModel)]="data.story"
+                    spellcheck="false"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
