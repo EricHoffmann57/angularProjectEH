@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
 
-## Video Game Collection
+## Video Games Collection
 
 This project presents a video game collection in the form of collectible cards linked to a firebase database.
 Each card possesses three buttons almost invisible at the bottom whose opacity changes on hover state 
