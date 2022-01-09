@@ -21,7 +21,7 @@ each card has a real time "favorite" feature to sort cards by status.
 
 This project is fully responsive to be used on mobiles.
 
-##Modules used
+## Modules used
 
 -Angular 12.2.0
 -fire 6.1.5
