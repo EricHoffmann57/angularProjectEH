@@ -23,13 +23,13 @@ This project is fully responsive to be used on mobiles.
 
 ## Modules used
 
--Angular 12.2.0
--fire 6.1.5
--firebase 8.6.7
--Angular material 12.2.13
--ng2-search-filter 0.5.1
--Angular flex layout 13.0.0-béta.36
--bootstrap 5.1.3
+- Angular 12.2.0
+- fire 6.1.5
+- firebase 8.6.7
+- Angular material 12.2.13
+- ng2-search-filter 0.5.1
+- Angular flex layout 13.0.0-béta.36
+- bootstrap 5.1.3
 
 ## Development server
 
