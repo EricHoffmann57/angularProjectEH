@@ -14,7 +14,7 @@ one button to see a pop up modal for more details about this game
 a form with required fields permits to add new cards
 
 Two ways to sort data for client have been implemented:
--a search filter by keywords
+- a search filter by keywords
 - a select box with options to filter results: alphabetically, by dates, by rating,etc
 
 each card has a real time "favorite" feature to sort cards by status.
