@@ -19,7 +19,7 @@ Two ways to sort data for client have been implemented:
 
 each card has a real time "favorite" feature to sort cards by status.
 
-This project is fully responsive to be used on mobiles.
+This project is fully responsive and can be used on mobiles.
 
 ## Modules used
 
