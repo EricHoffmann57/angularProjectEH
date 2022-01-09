@@ -4,12 +4,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Video Games Collection
 
-This project presents a video game collection in the form of collectible cards linked to a firebase database.
+This project presents a video games collection in the form of collectible cards linked to a firebase database.
 Each card possesses three buttons almost invisible at the bottom whose opacity changes on hover state 
 
-one button to modify content in database
-one button to delete card from database
-one button to see a pop up modal for more details about this game
+- one button to modify content in database
+- one button to delete card from database
+- one button to see a pop up modal for more details about this game
 
 a form with required fields permits to add new cards
 
